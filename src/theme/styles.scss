@@ -1,0 +1,134 @@
+:root {
+  --red: rgb(195, 62, 0);
+  --blue: rgb(0, 91, 211);
+  --gray1: rgba(107, 107, 107, 0.2);
+  --gray2: rgba(65, 65, 65, 0.39);
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  background-color: #c0c2a9;
+
+  & * > button {
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    border: 0;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+  }
+  & * > button:hover {
+    filter: brightness(1.1);
+    transition: 0.3s all ease-in-out;
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    
+    & div {
+      margin: 0 auto;
+    }
+  }
+}
+
+.App__title {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.posts__submit-form {
+  display: flex;
+  max-width: 300px;
+  width: 80%;
+
+  & input, & textarea {
+    margin: 0 0 1rem 0;
+    padding: 0.8rem;
+    max-width: 272px;
+    min-width: 150px;
+    border: 0px solid var(--blue);
+    border-radius: 0.5rem;
+
+    &:focus {
+      box-shadow: 0 0.3rem 0.7rem 0.3rem var(--gray2);
+    }
+  }
+
+  & form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & span {
+      color: var(--red);
+    }
+  }
+
+  & button {
+    background-color: var(--blue);
+  }
+}
+
+.posts__container {
+  max-width: 300px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    list-style: none;
+    width: 100%;
+  }
+
+  ul li {
+    border-radius: 1rem;
+    text-align: start;
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0.3rem 0.7rem 0.1rem var(--gray1);
+    transition: 0.2s all ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.3rem 0.7rem 0.3rem var(--gray2);
+      transition: 0.2s all ease-in-out;
+    }
+  }
+}
+
+.posts__post-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 2rem;
+  margin-top: 0.8rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  & button {
+    background-color: var(--red);
+  }
+}
